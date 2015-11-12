@@ -93,3 +93,21 @@ Les requêtes avec PostMan fonctionnent, par exemple pour avoir des informations
 
 ## Conception Application Cliente
 
+### Lister les fonctionnalités applicatives correspondant aux requêtes et les classer selon les deux types de clients : Mobile et Web.
+
+> On peut imaginer créer un site web et son application qui permettent d'avoir des statistiques sur son profil GitHub.
+> Le site et l'application s'appelleront *GitStats*
+
+Toutes les fonctionnalités listées peuvent appartenir à la fois à un client Web ou Mobile :
+
+  - Lister les gists d'un utlisateur
+  - Lister les problèmes d'un projet
+  - Lister les organisations d'un utilisateur
+  - Lister les repos d'un utilisateur
+ 
+###  Faire des ébauches d’interfaces possibles pour deux applications clientes, une Mobile et une Web.
+
+### Lien des captures d'écran:
+  - Maquette web : http://s29.postimg.org/3zbhdimfb/Screenshot_2015_11_12_16_02_30.png
+  - Maquette mobile : http://s4.postimg.org/e4lefv2gd/Screenshot_2015_11_12_16_02_11.png
+
