@@ -1,3 +1,7 @@
+**Lien du TD : http://www.machada.fr/courses/bdd_client_td_1.pdf**
+
+**Lien API GitHub : https://developer.github.com/v3/**
+
 ## Question 1
 
 ### API GITHUB
@@ -33,6 +37,59 @@ Services disponibles :
   - Lister les organisations d'un utilisateur : *GET /users/:username/orgs*
   - Lister les repos d'un utilisateur : *GET /users/:username/repos*
 
-## Tester les requêtes
+### Faire des requêtes authentifiés
+Les requêtes authentifiées se font grâce à un *token* généré dans son compte GitHub
 
+Par exemple pour avoir les followers d'un utilisateur, on lance une requête comme celle-ci:
+
+https://www.getpostman.com/oauth2/start?authorization_url=https%3A%2F%2Fgithub.com%2Flogin%2Foauth%2Fauthorize&access_token_url=https%3A%2F%2Fgithub.com%2Flogin%2Foauth%2Faccess_token&client_id=1419684&client_secret=d3e44e565f25fda093c26f5297641c4df38ad643&scope=&local_access_token=false&app_id=fhbjgbiflinjbdggehcddcbncdddomop
+
+Dans Postman, on précise:
+  - l'URL d'autorisation de Github : *https://github.com/login/oauth/authorize*
+  - L'URL Access token : https://github.com/login/oauth/access_token
+  - L'id de l'utilisateur (*1419684* ici) 
+  - Le token : *d3e44e565f25fda093c26f5297641c4df38ad643* par exemple
+
+Il va être demandé à l'utilisateur de se connecter. Une fois connecté on est redirigé sur une url de callback et on est autorisé à voir le nombre de followers (par exemple)
+
+
+## Tester les requêtes
+Les requêtes avec PostMan fonctionnent, par exemple pour avoir des informations en JSON sur un utilisateur, il faut faire la requête : **https://api.github.com/users/victr**.
+
+**On obtient la réponse suivante :**
+
+> {
+  "login": "victr",
+  "id": 1419684,
+  "avatar_url": "https://avatars.githubusercontent.com/u/1419684?v=3",
+  "gravatar_id": "",
+  "url": "https://api.github.com/users/victr",
+  "html_url": "https://github.com/victr",
+  "followers_url": "https://api.github.com/users/victr/followers",
+  "following_url": "https://api.github.com/users/victr/following{/other_user}",
+  "gists_url": "https://api.github.com/users/victr/gists{/gist_id}",
+  "starred_url": "https://api.github.com/users/victr/starred{/owner}{/repo}",
+  "subscriptions_url": "https://api.github.com/users/victr/subscriptions",
+  "organizations_url": "https://api.github.com/users/victr/orgs",
+  "repos_url": "https://api.github.com/users/victr/repos",
+  "events_url": "https://api.github.com/users/victr/events{/privacy}",
+  "received_events_url": "https://api.github.com/users/victr/received_events",
+  "type": "User",
+  "site_admin": false,
+  "name": "Victor",
+  "company": null,
+  "blog": null,
+  "location": null,
+  "email": null,
+  "hireable": null,
+  "bio": null,
+  "public_repos": 0,
+  "public_gists": 0,
+  "followers": 0,
+  "following": 0,
+  "created_at": "2012-02-08T13:45:21Z",
+  "updated_at": "2015-09-04T14:33:25Z"
+}
+
+## Conception Application Cliente
 
