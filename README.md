@@ -108,6 +108,9 @@ Toutes les fonctionnalités listées peuvent appartenir à la fois à un client 
 ###  Faire des ébauches d’interfaces possibles pour deux applications clientes, une Mobile et une Web.
 
 ### Lien des captures d'écran:
-  - Maquette web : ![alt description](http://s29.postimg.org/3zbhdimfb/Screenshot_2015_11_12_16_02_30.png)
-  - Maquette mobile : ![alt description](http://s4.postimg.org/e4lefv2gd/Screenshot_2015_11_12_16_02_11.png)
+  - Maquette web : 
+  ![alt description](http://s29.postimg.org/3zbhdimfb/Screenshot_2015_11_12_16_02_30.png)
+  
+  - Maquette mobile : 
+  ![alt description](http://s4.postimg.org/e4lefv2gd/Screenshot_2015_11_12_16_02_11.png)
 
