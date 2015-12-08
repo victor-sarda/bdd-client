@@ -1,0 +1,172 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ListeRepos"
+        android:id="@+id/LayoutDescription1"
+        android:layout_alignTop="@+id/ListeRepos">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entrez votre nom d&apos;utilisateur Github pour trouver vos repositories : "
+            android:id="@+id/Description1"
+            android:textAlignment="center"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="true"
+        android:gravity="top"
+        android:id="@+id/LayoutInput1"
+        android:layout_below="@+id/LayoutDescription1">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/InputUsername"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rechercher"
+            android:id="@+id/BtnSearch"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="Search"
+            android:nestedScrollingEnabled="false" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LayoutInput1"
+        android:id="@+id/LayoutDescription2"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gerez votre utilisateur par défaut ici :"
+            android:id="@+id/Description2"
+            android:layout_gravity="center"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LayoutSave"
+        android:gravity="center"
+        android:layout_below="@+id/LayoutDescription2">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Faire de cet utilisateur l&apos;utilisateur par défaut"
+            android:id="@+id/BtnSave"
+            android:onClick="SaveUsername" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LayoutSave"
+        android:id="@+id/LayoutDel"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retirer le nom d&apos;utilisateur par défaut"
+            android:id="@+id/BtnDel"
+            android:nestedScrollingEnabled="false"
+            android:onClick="DelUsername" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LayoutDescription3"
+        android:layout_below="@+id/LayoutDel"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voici la liste des repositories trouvés : \n Cliquez sur un item pour avoir des infos supplémentaires"
+            android:id="@+id/Description3"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LayoutListe"
+        android:layout_below="@+id/LayoutDescription3">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="156dp"
+            android:id="@+id/ListeRepos"
+            android:layout_centerHorizontal="true"
+            android:nestedScrollingEnabled="true"
+            android:textAlignment="center"
+            android:textFilterEnabled="false"
+            android:background="#c6c6c6" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LayoutListe"
+        android:id="@+id/LayoutDescription4">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vous pouvez ici consulter votre historique de recherche :"
+            android:id="@+id/Description4"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LayoutDescription4"
+        android:id="@+id/LayoutActionBase"
+        android:gravity="center|clip_vertical">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Consulter "
+            android:id="@+id/BtnConsulterBase"
+            android:nestedScrollingEnabled="false"
+            android:onClick="SeeBase" />
+
+    </LinearLayout>
+
+</RelativeLayout>

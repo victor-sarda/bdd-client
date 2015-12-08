@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+  	<title>TD 3 - REQUETES API, API DE FLICKR</title>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1 style="text-align:center;"> REQUETES API : RECHERCHE DE PHOTO </h1>
+	</header>
+	
+	<section>
+		<div style="text-align:center;">
+			<p> Entrez un critère de recherche : </p>
+			<input type="text" id="motcle">
+			<input type="button" value="Trouver des photos" onClick="cherchePhoto($('#motcle').val())"><br/>
+		</div>
+		
+		<br />
+		
+		<div id="images" style="height: 300px; text-align:center; padding-left:600px; padding-right:600px;"></div>
+	</section>
+	
+	<script type="text/javascript">
+
+		function cherchePhoto(motcle) {
+						 
+			var urlDistante="http://api.flickr.com/services/feeds/photos_public.gne?tags="+motcle+"&tagmode=any&format=json&jsoncallback=?";
+
+			 $.ajax({
+			   url : urlDistante,
+			   type : 'GET',
+			   dataType : 'JSON',
+			   success : function(code_json, statut){ 
+					 $('#images').empty();
+					 $.getJSON( urlDistante, function( data ) {
+						 $.each( data.items, function( i, item ) {
+							$( '<img style="  border:1px solid black; display: inlineblock; margin:20px;">' ).attr( "src", item.media.m ).appendTo( "#images" );
+						 });  
+					});
+				},
+				error : function(resultat, statut, erreur){
+					alert(erreur+" : "+status+" : "+resultat);
+				}
+			});
+		}
+	</script>
+</body>
+</html>
